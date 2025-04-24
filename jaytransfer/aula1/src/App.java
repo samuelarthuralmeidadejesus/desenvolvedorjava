@@ -51,6 +51,16 @@ public class App {
         //Task no Github (git e github)
         System.out.println("Nome:"+nome+","+"Meio do Transporte:"+meioTransporte);
     
-      
+         try(FileWriter escritor = new FileWriter("dados.txt",true)){
+
+              escritor.write(nome+","+meioTransporte+"\n");
+              System.out.println("dados gravados com sucesso");
+
+         }catch(IOException e){
+              System.err.println("Erro ao gravar os dados "+e.getMessage());
+
+         }
+       
+         
     }
 }
